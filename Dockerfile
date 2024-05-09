@@ -1,10 +1,10 @@
-# 使用 centos:7作为基础镜像
-FROM centos:7
+# 使用 Ubuntu 22.04 作为基础镜像
+FROM ubuntu:22.04
 
 # 安装 Shellinabox
-RUN yum -y update && \
-    yum install -y shellinabox && \
-    yum clean && \
+RUN apt-get update && \
+    apt-get install -y shellinabox && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # 设置 root 用户的密码为 'root'
